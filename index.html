@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>LE BUSINESS - Cartel</title>
     
-    <!-- 🚨 DETECTEUR D'ERREURS POUR MOBILE 🚨 -->
+    <!-- DETECTEUR D'ERREURS -->
     <script>
         window.onerror = function(msg, url, line) {
             document.body.innerHTML = '<div style="color:#ff4444; padding:20px; font-family:monospace; font-size:14px; background:#111; height:100vh; z-index:9999; position:relative;">' + 
@@ -25,14 +25,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>
     
-    <!-- Scripts (Attention : J'ai retiré les "js/" ici) -->
+    <!-- Scripts métiers globaux -->
     <script src="jsaudio.js"></script>
     <script src="jsconstants.js"></script>
     <script src="jslogic.js"></script>
     
-    <!-- Composants React -->
-    <script type="text/babel" src="jsicons.jsx"></script>
-    <script type="text/babel" src="jsApp.jsx"></script>
+    <!-- Composant React Principal (Unifié) -->
+    <script type="text/babel" src="jsapp.jsx"></script>
 </head>
 <body class="theme-normal screen-fx">
     <div id="root"></div>
