@@ -1674,7 +1674,7 @@ function App() {
                         )}
                     </div>
                     <button onClick={closeDrawResults} className={`px-8 py-3 rounded text-lg font-bold uppercase tracking-widest transition-transform hover:scale-105 shadow-lg ${details.isHell ? 'bg-red-700 text-white hover:bg-red-600 hell-text-aura' : 'bg-blue-700 text-white hover:bg-blue-600'}`}>
-                        {gameState.grandRitualArmed ? "RÉUNIR LE CONSEIL >" : (details.grandRitualAction === 'SEPARATION' ? "VOIR LA DISSOLUTION >" : "CONTINUER")}
+                        {gameState.grandRitualArmed ? "RÉUNIR LE CONSEIL >" : (details.grandRitualAction === 'SEPARATION' ? "VOIR LA DISSOLUTION &gt;" : "CONTINUER")}
                     </button>
                 </div>
             </div>
@@ -2050,9 +2050,9 @@ function App() {
 
                                 {activePlayer.omertaTokens >= CONFIG.omertaTarget && (
                                     <button onClick={handleOmertaExchange} className="w-full py-2 bg-gray-800 border border-gray-500 text-gray-300 font-bold uppercase text-xs rounded hover:bg-gray-700 animate-pulse">
-                                        <div className="flex items-center justify-center gap-2">
+                                        <div className="flex items-center justify-center gap-2">RÉUNIR LE CONSEIL &gt;
                                             <SVG icon="Ghost" size={14}/>
-                                            <span>Utiliser Preuves ({activePlayer.omertaTokens}) -> Ticket Gratuit</span>
+                                            <span>Utiliser Preuves ({activePlayer.omertaTokens}) &gt; Ticket Gratuit</span>
                                         </div>
                                     </button>
                                 )}
@@ -2108,7 +2108,7 @@ function App() {
                                                 </div>
                                             </div>
                                             <div className="text-right">
-                                                <div className="text-xs bg-slate-800 px-2 py-1 rounded text-gray-400">Ouvrir ></div>
+                                                <div className="text-xs bg-slate-800 px-2 py-1 rounded text-gray-400">Ouvrir &gt;</div>
                                             </div>
                                         </div>
                                     </div>
