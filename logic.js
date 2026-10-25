@@ -1,8 +1,15 @@
 // --- MOTEUR AUDIO ---
-const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+let audioCtx = null;
         
 const playSound = (type) => {
+    // Sécurité anti-crash mobile : on initialise au 1er clic
+    if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return; 
+        audioCtx = new AudioContext();
+    }
     if (audioCtx.state === 'suspended') audioCtx.resume();
+
     
     const now = audioCtx.currentTime;
     const osc = audioCtx.createOscillator();

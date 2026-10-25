@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>LE BUSINESS - Cartel Auvergnat</title>
     
+    <!-- SCRIPT DETECTEUR D'ERREUR POUR MOBILE -->
+    <script>
+      window.onerror = function(msg, url, line) { alert("Erreur JS : " + msg + " (Ligne " + line + ")"); };
+      const originalError = console.error;
+      console.error = function(...args) {
+        alert("Erreur React/Babel :\n" + args[0]);
+        originalError.apply(console, args);
+      };
+    </script>
+    
+    <!-- ... le reste de tes scripts ... -->
+
+    
     <!-- 1. Bibliothèques externes corrigées -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
