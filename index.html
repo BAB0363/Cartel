@@ -5,27 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>LE BUSINESS - Cartel Auvergnat</title>
     
-    <!-- 1. DETECTEUR D'ERREUR AMÉLIORÉ -->
-    <script>
-      window.onerror = function(msg, url, line) { 
-          if (msg === 'Script error.') {
-              alert("⚠️ ERREUR CACHÉE.\n1. Videz le cache de votre navigateur.\n2. Vérifiez que app.jsx s'écrit bien en minuscules.");
-          } else {
-              alert("ERREUR CRITIQUE :\n" + msg + "\nLigne : " + line); 
-          }
-      };
-      const originalError = console.error;
-      console.error = function(...args) {
-        alert("ERREUR CODE REACT :\n" + args[0]);
-        originalError.apply(console, args);
-      };
-    </script>
-
-    <!-- 2. CDNs AVEC CROSSORIGIN (Pour démasquer les erreurs) -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com" crossorigin="anonymous"></script>
+    <!-- 1. MOTEUR REACT -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- 2. MOTEUR DE DESIGN (Toujours avant theme.js) -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- 3. TES FICHIERS -->
     <script src="theme.js"></script>
@@ -36,6 +22,8 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         body { overscroll-behavior-y: none; background-color: #020617; color: white; user-select: none; }
+        
+        /* Tes thèmes dynamiques */
         body.theme-normal { background-color: #0f172a; color: #f8fafc; } 
         body.theme-666 { background-color: #1a0303; color: #fecaca; } 
         body.theme-blood { background-color: #2a0a0a; color: #fca5a5; } 
@@ -46,6 +34,7 @@
         body.theme-soul-dark { background-color: #000000; color: #94a3b8; } 
         body.theme-mystery { background-color: #312e81; color: #c7d2fe; } 
         body.theme-grand-ritual { background: radial-gradient(circle at center, #14532d 0%, #020617 100%); color: #fbbf24; } 
+        
         .theme-666 .screen-fx, .theme-chaos .screen-fx { animation: screenJump 5s infinite ease-in-out; }
         .crt-overlay { background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)); background-size: 100% 2px, 3px 100%; pointer-events: none; }
         .locked-cell { background-image: repeating-linear-gradient(45deg, #000 0, #000 10px, #333 10px, #333 20px); opacity: 0.5; }
@@ -63,10 +52,8 @@
 <body class="theme-normal screen-fx">
     
     <div id="root">
-        <!-- Message d'attente qui disparaît quand le jeu charge -->
         <div style="padding: 30px; text-align: center; color: gray; font-family: monospace;">
-            Vérification de la Planque...<br>
-            Si ça bloque ici, videz le cache du navigateur !
+            Chargement du Réseau en cours...
         </div>
     </div>
     
